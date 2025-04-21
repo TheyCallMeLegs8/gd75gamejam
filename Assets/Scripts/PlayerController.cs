@@ -24,11 +24,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _startingIndex = 1;
     [SerializeField] private int _currentIndex = 0;
 
-
-    private Transform _originTransform;
-    private float _rightPosition;
-    private float _leftPosition;
-
     private void OnValidate()
     {
         if(_rigidBody == null) _rigidBody = GetComponent<Rigidbody>();
