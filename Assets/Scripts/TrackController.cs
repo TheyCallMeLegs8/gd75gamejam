@@ -17,27 +17,44 @@ public class TrackController : MonoBehaviour
     [SerializeField] private Transform _trackTransform;
     [SerializeField] private GameObject _spawnerPrefab;
 
-
     private List<SpawnHandler> _spawnPoints = new List<SpawnHandler>();
-    
+
+    private Coroutine _gameLoopCoroutine;
 
     private void Awake()
     {
         SetupTrack();
     }
 
+    private void Start()
+    {
+        _gameLoopCoroutine = StartCoroutine(GameSequence());
+    }
+
     private IEnumerator GameSequence()
     {
         // Initialize the first encounter
+        yield return EncounterSequence(_encounters[0]);
 
         // Execute main loop
         while (true)
         {
-
+            // Randomly choose next encounter
+            int next = Random.Range(0, _encounters.Count);
+            yield return EncounterSequence(_encounters[next]);
         }
+    }
 
-
-
+    private IEnumerator EncounterSequence(EncounterData data)
+    {
+        // Iterate through the list of obstacles in the thing
+        for (int i = 0; i < data.Obstacles.Count; i++)
+        {
+            yield return new WaitForSeconds(data.TimeOffset[i]);
+            int laneIndex = data.Lanes[i];
+            ObstacleType obstacle = data.Obstacles[i];
+            _spawnPoints[laneIndex].SpawnObjectOfType(obstacle);
+        }
     }
 
     private void SetupTrack()
