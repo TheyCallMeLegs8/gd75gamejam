@@ -15,11 +15,200 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638808356846988111
+  lastModified: 638808420053652588
   FileSizes:
   - Name: Desktop
-    Value: 772
+    Value: 1432
   Exists: 1
+--- !u!114 &-8518566944962360410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu Music
+  Guid:
+    Data1: -1368604501
+    Data2: 1327939591
+    Data3: 590453633
+    Data4: 556874641
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63500
+--- !u!114 &-8365552874870789476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Falling Off The Bike
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Falling Off The Bike
+  Guid:
+    Data1: -1030954844
+    Data2: 1131513810
+    Data3: 228462989
+    Data4: 1048653265
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7377722449620822757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Collision Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Collision Sound
+  Guid:
+    Data1: -613544189
+    Data2: 1224078078
+    Data3: 1070921871
+    Data4: -690886071
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4383205139163996911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Monster Killing Player
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Monster Killing Player
+  Guid:
+    Data1: 81992861
+    Data2: 1187724752
+    Data3: 2048009358
+    Data4: 1326677474
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3948584801014753895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bike Engine Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bike Engine Sound
+  Guid:
+    Data1: -782708330
+    Data2: 1178302767
+    Data3: -1037409112
+    Data4: 2025139808
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3385383794429724825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Player Invincibility Powerup
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Player Invincibility Powerup
+  Guid:
+    Data1: 78351903
+    Data2: 1270761469
+    Data3: 2089811635
+    Data4: -464219452
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2563501790656856222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Lose Screen Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Lose Screen Music
+  Guid:
+    Data1: -1680694665
+    Data2: 1111032512
+    Data3: 469095090
+    Data4: -1591850298
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,18 +225,29 @@ MonoBehaviour:
   - {fileID: -8641393648664326383}
   - {fileID: 8250410840181561322}
   EditorEvents:
-  - {fileID: 3632245045658073192}
+  - {fileID: -7377722449620822757}
+  - {fileID: -3385383794429724825}
+  - {fileID: -2563501790656856222}
+  - {fileID: 8957931220477905657}
+  - {fileID: -3948584801014753895}
+  - {fileID: -4383205139163996911}
+  - {fileID: -8365552874870789476}
+  - {fileID: -8518566944962360410}
+  - {fileID: 3145488744539058907}
+  - {fileID: 6854742637504629101}
+  - {fileID: 2418177334500638053}
+  - {fileID: 8593277436590455733}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8250410840181561322}
   StringsBanks:
   - {fileID: -8641393648664326383}
   cacheVersion: 131847
-  cacheTime: 638808366491916181
+  cacheTime: 638808420053652588
   SerializableEventsDict:
   - key: event:/Menu Music
     index: 0
---- !u!114 &3632245045658073192
+--- !u!114 &2418177334500638053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,23 +257,77 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Menu Music
+  m_Name: event:/SFX/Sliding
   m_EditorClassIdentifier: 
-  Path: event:/Menu Music
+  Path: event:/SFX/Sliding
   Guid:
-    Data1: -1368604501
-    Data2: 1327939591
-    Data3: 590453633
-    Data4: 556874641
+    Data1: -1589923648
+    Data2: 1267206972
+    Data3: -2047440751
+    Data4: 1808626449
   Banks:
   - {fileID: 8250410840181561322}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 63500
+  Length: 0
+--- !u!114 &3145488744539058907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Credits Screen Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Credits Screen Music
+  Guid:
+    Data1: 718357941
+    Data2: 1086832569
+    Data3: 159227831
+    Data4: -1961242
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6854742637504629101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jumping
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Jumping
+  Guid:
+    Data1: 566039222
+    Data2: 1102813786
+    Data3: 937300658
+    Data4: -120888653
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8250410840181561322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +343,62 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638808366491916181
+  lastModified: 638808420053642610
   FileSizes:
   - Name: Desktop
-    Value: 941600
+    Value: 948992
   Exists: 1
+--- !u!114 &8593277436590455733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Death Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Death Sound
+  Guid:
+    Data1: -1476151861
+    Data2: 1265775632
+    Data3: -585261947
+    Data4: -381885951
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8957931220477905657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Monster Growling
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Monster Growling
+  Guid:
+    Data1: 569028219
+    Data2: 1233614007
+    Data3: 1945763204
+    Data4: -951740867
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

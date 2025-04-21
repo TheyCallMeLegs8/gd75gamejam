@@ -916,7 +916,7 @@ MonoBehaviour:
       Data2: 1327939591
       Data3: 590453633
       Data4: 556874641
-    Path: event:/Menu Music
+    Path: event:/Music/Menu Music
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
