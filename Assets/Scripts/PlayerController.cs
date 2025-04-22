@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3 _raycastDirection = new Vector3(0, -1, 0);
     [SerializeField] float _raycastLength = 3f;
     [SerializeField] LayerMask _groundLayer;
+    [SerializeField] private Vector3 _frontCheckOffset;
+    [SerializeField] private Vector3 _backCheckOffset;
     private bool _isGrounded = false;
     private bool _wasGrounded;
 
@@ -97,12 +99,6 @@ public class PlayerController : MonoBehaviour
         GroundCheck();
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
-    }
-
     private bool TryJump()
     {
         if (!_canJump) return false;
@@ -132,7 +128,8 @@ public class PlayerController : MonoBehaviour
     {
         _wasGrounded = _isGrounded;
 
-        if (Physics.Raycast(transform.position, _raycastDirection, out RaycastHit hitInfo, _raycastLength, _groundLayer))
+        // shoots a raycast from front back and center
+        if (Physics.Raycast(transform.position + _frontCheckOffset, _raycastDirection, out RaycastHit frontHitInfo, _raycastLength, _groundLayer) || Physics.Raycast(transform.position + _backCheckOffset, _raycastDirection, out RaycastHit backHitInfo, _raycastLength, _groundLayer) || Physics.Raycast(transform.position, _raycastDirection, out RaycastHit centerHitInfo, _raycastLength, _groundLayer))
         {
             _isGrounded = true;
         }
@@ -197,5 +194,12 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = teleportPoint;
         _rigidBody.position = teleportPoint;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Debug.DrawRay(transform.position + _frontCheckOffset, _raycastDirection, Color.yellow);
+        Debug.DrawRay(transform.position + _backCheckOffset, _raycastDirection, Color.yellow);
+        Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
     }
 }
