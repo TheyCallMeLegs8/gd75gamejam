@@ -73,7 +73,7 @@ public class TrackController : MonoBehaviour
         _trackTransform.localScale = initialScale;
 
         // Center the track
-        _trackTransform.position = new Vector3(0f, 0f, TrackLength * 0.5f);
+        _trackTransform.position = new Vector3(0f, -1f, TrackLength * 0.5f - 10f);
 
         // Establish spawn points
         for (int i = 0; i < LaneCount; i++)
@@ -87,7 +87,7 @@ public class TrackController : MonoBehaviour
             else Debug.LogError("Incorrect prefab assigned");
 
             // Reposition the spawner
-            spawner.transform.position = new Vector3((-totalWidth / 2) + LaneWidth * i + (LaneWidth / 2f), 0f, TrackLength);
+            spawner.transform.position = new Vector3((-totalWidth / 2) + LaneWidth * i + (LaneWidth / 2f), -1f, TrackLength);
         }
     }
 

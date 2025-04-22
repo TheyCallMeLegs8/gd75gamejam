@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638808636062931152
+  lastModified: 638809202590191275
   FileSizes:
   - Name: Desktop
-    Value: 1426
+    Value: 1476
   Exists: 1
 --- !u!114 &-8518566944962360410
 MonoBehaviour:
@@ -264,13 +264,14 @@ MonoBehaviour:
   - {fileID: 2418177334500638053}
   - {fileID: 8593277436590455733}
   - {fileID: -3839862835656008752}
+  - {fileID: 6936975432079436496}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8250410840181561322}
   StringsBanks:
   - {fileID: -8641393648664326383}
   cacheVersion: 131847
-  cacheTime: 638808636062931152
+  cacheTime: 638809202590191275
   SerializableEventsDict:
   - key: event:/SFX/Player Collision Sound
     index: 0
@@ -296,6 +297,8 @@ MonoBehaviour:
     index: 10
   - key: event:/Music/Gameplay Music
     index: 11
+  - key: event:/Music/Credits Screen Music
+    index: 12
 --- !u!114 &2418177334500638053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +353,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6936975432079436496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Credits Screen Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Credits Screen Music
+  Guid:
+    Data1: 718357941
+    Data2: 1086832569
+    Data3: 159227831
+    Data4: -1961242
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8250410840181561322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,10 +395,10 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638808636062921176
+  lastModified: 638809202590181292
   FileSizes:
   - Name: Desktop
-    Value: 6567648
+    Value: 6568288
   Exists: 1
 --- !u!114 &8593277436590455733
 MonoBehaviour:

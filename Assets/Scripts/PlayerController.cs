@@ -3,9 +3,14 @@ using UnityEngine.InputSystem;
 using PrimeTween;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private UnityEvent _onRunStart;
+    [SerializeField] private UnityEvent _onDeath;
+
     [Header("Components")]
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private PlayerInput _playerInput;
@@ -295,5 +300,11 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position + _frontCheckOffset, _raycastDirection, Color.yellow);
         Debug.DrawRay(transform.position + _backCheckOffset, _raycastDirection, Color.yellow);
         Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
+    }
+
+    public void Die()
+    {
+        Debug.Log("<color=red>Player killed</color>");
+        _onDeath.Invoke();
     }
 }
