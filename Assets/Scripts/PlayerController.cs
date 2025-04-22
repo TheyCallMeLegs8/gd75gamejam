@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 _rightTurnAngle = new Vector3(0, 45f, 0);
     [SerializeField] private Vector3 _leftTurnAngle = new Vector3(0, -45f, 0);
     [SerializeField] private float _turnSpeed = 10f;
+    [SerializeField] private Ease _turnEase;
     private Tween _rightTurnAnim;
     private Tween _leftTurnAnim;
     private Tween _endTurnAnim;
@@ -103,7 +104,7 @@ public class PlayerController : MonoBehaviour
         _endTurnAnim.Stop();
         if (!_leftTurnAnim.isAlive)
         {
-            _leftTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(_leftTurnAngle), _turnSpeed, Ease.Default).OnComplete(() => ReturnToDefaultTween());
+            _leftTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(_leftTurnAngle), _turnSpeed, _turnEase).OnComplete(() => ReturnToDefaultTween());
         }
     }
 
@@ -128,7 +129,7 @@ public class PlayerController : MonoBehaviour
         _endTurnAnim.Stop();
         if (!_rightTurnAnim.isAlive)
         {
-            _rightTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(_rightTurnAngle), _turnSpeed, Ease.Default).OnComplete(() => ReturnToDefaultTween());
+            _rightTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(_rightTurnAngle), _turnSpeed, _turnEase).OnComplete(() => ReturnToDefaultTween());
         }
 
     }
