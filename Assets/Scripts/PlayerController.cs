@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded = false;
 
     [Header("Movement")]
-    [SerializeField] private float _moveDistance = 5f;
+    [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _jumpForce = 10f;
     private Tween _rightMovementTween;
     private Tween _leftMovementTween;
@@ -47,7 +47,16 @@ public class PlayerController : MonoBehaviour
 
         _currentIndex--;
 
-        _leftMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], 0.3f);
+        float currentX = gameObject.transform.localPosition.x;
+        float targetX = _movePoints[_currentIndex];
+        float distance = Mathf.Abs(targetX - currentX);
+
+        // Calculate dynamic duration
+        float duration = distance / _moveSpeed;
+
+        _rightMovementTween.Stop();
+        _leftMovementTween.Stop();
+        _leftMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], duration);
     }
 
     public void OnRight()
@@ -56,7 +65,15 @@ public class PlayerController : MonoBehaviour
 
         _currentIndex++;
 
-        _rightMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], 0.3f);
+        float currentX = gameObject.transform.localPosition.x;
+        float targetX = _movePoints[_currentIndex];
+        float distance = Mathf.Abs(targetX - currentX);
+
+        float duration = distance / _moveSpeed;
+
+        _leftMovementTween.Stop();
+        _rightMovementTween.Stop();
+        _rightMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], duration);
     }
 
     private void FixedUpdate()
