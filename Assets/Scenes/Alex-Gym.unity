@@ -679,6 +679,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 3881852097567123280, guid: 5fe64e7a797db5442969d293f97244f9, type: 3}
+      propertyPath: _turnSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881852097567123280, guid: 5fe64e7a797db5442969d293f97244f9, type: 3}
+      propertyPath: _leftTurnAngle
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881852097567123280, guid: 5fe64e7a797db5442969d293f97244f9, type: 3}
+      propertyPath: _leftTurnAngle.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881852097567123280, guid: 5fe64e7a797db5442969d293f97244f9, type: 3}
+      propertyPath: _leftTurnAngle.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881852097567123280, guid: 5fe64e7a797db5442969d293f97244f9, type: 3}
+      propertyPath: _rightTurnAngle.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881852097567123280, guid: 5fe64e7a797db5442969d293f97244f9, type: 3}
+      propertyPath: _rightTurnAngle.z
+      value: -30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
