@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 [CreateAssetMenu(fileName = "OptionsData", menuName = "Data/OptionsData")]
 public class OptionsData : ScriptableObject
