@@ -228,6 +228,9 @@ MonoBehaviour:
   _aerialSlideSpeed: 10
   _slideDuration: 1
   _slideLayerIndex: 7
+  _superDuration: 6
+  _superHeight: 10
+  _superRiseSpeed: 15
 --- !u!114 &8175759975991711485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6413cea6ba62e8449971d6e1278466aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerControls: {fileID: 0}
   _hitLayer:
     serializedVersion: 2
     m_Bits: 128
