@@ -14,9 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _raycastLength = 3f;
     [SerializeField] LayerMask _groundLayer;
     private bool _isGrounded = false;
+    private bool _wasGrounded;
 
     [Header("Movement")]
     [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private int _maxJumpCount = 1;
+    private int _jumpCounter = 0;
+    private bool _hasLanded = true;
     [SerializeField] private float _jumpForce = 10f;
     private Tween _rightMovementTween;
     private Tween _leftMovementTween;
@@ -38,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump()
     {
-        _rigidBody.AddForce(new Vector3(0, _jumpForce, 0));
+        TryJump();
     }
 
     public void OnLeft()
@@ -87,8 +91,35 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
     }
 
+    private bool TryJump()
+    {
+        if (_isGrounded)
+        {
+            _jumpCounter = 0;
+        }
+
+        // if the player is grounded and has enough jumps then they may jump
+        if (_isGrounded || _jumpCounter < _maxJumpCount)
+        {
+            _jumpCounter++;
+            DoJump();
+            return true;
+        }
+
+        return false;
+    }
+
+    private void DoJump()
+    {
+        _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _jumpForce, _rigidBody.linearVelocity.z);
+
+        Debug.Log(_maxJumpCount);
+    }
+
     protected bool GroundCheck()
     {
+        _wasGrounded = _isGrounded;
+
         if (Physics.Raycast(transform.position, _raycastDirection, out RaycastHit hitInfo, _raycastLength, _groundLayer))
         {
             _isGrounded = true;
@@ -96,9 +127,20 @@ public class PlayerController : MonoBehaviour
         else
         {
             _isGrounded = false;
+            _hasLanded = false;
+        }
+
+        if(!_wasGrounded && _isGrounded)
+        {
+            Landed();
         }
 
         return _isGrounded;
+    }
+
+    private void Landed()
+    {
+        _hasLanded = true;
     }
 
     private void Teleport(Vector3 teleportPoint)

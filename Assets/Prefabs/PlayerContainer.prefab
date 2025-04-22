@@ -214,7 +214,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   _moveSpeed: 5
-  _jumpForce: 300
+  _jumpCount: 1
+  _jumpForce: 5
   _movePoints:
   - -5
   - 0
