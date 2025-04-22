@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using PrimeTween;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,12 +22,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _maxJumpCount = 1;
     private int _jumpCounter = 0;
     private bool _hasLanded = true;
+    private bool _canJump = true;
     [SerializeField] private float _jumpForce = 10f;
     private Tween _rightMovementTween;
     private Tween _leftMovementTween;
     [SerializeField] private List<float> _movePoints;
     [SerializeField] private int _startingIndex = 1;
     [SerializeField] private int _currentIndex = 0;
+
+    [Header("Slide")]
+    [SerializeField] private float _aerialSlideSpeed = 10f;
+    [SerializeField] private float _slideDuration = 1f;
+    [SerializeField] private int _slideLayerIndex = 7;
 
     private void OnValidate()
     {
@@ -80,6 +87,11 @@ public class PlayerController : MonoBehaviour
         _rightMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], duration);
     }
 
+    public void OnSlide()
+    {
+        DoSlide();
+    }
+
     private void FixedUpdate()
     {
         GroundCheck();
@@ -93,6 +105,8 @@ public class PlayerController : MonoBehaviour
 
     private bool TryJump()
     {
+        if (!_canJump) return false;
+
         if (_isGrounded)
         {
             _jumpCounter = 0;
@@ -112,8 +126,6 @@ public class PlayerController : MonoBehaviour
     private void DoJump()
     {
         _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _jumpForce, _rigidBody.linearVelocity.z);
-
-        Debug.Log(_maxJumpCount);
     }
 
     protected bool GroundCheck()
@@ -136,6 +148,36 @@ public class PlayerController : MonoBehaviour
         }
 
         return _isGrounded;
+    }
+
+    private void DoSlide()
+    {
+        if (!_isGrounded)
+        {
+            _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, -_aerialSlideSpeed, _rigidBody.linearVelocity.z);
+        }
+        if (_isGrounded)
+        {
+            StartCoroutine(SlideRoutine());
+        }
+    }
+
+    private IEnumerator SlideRoutine()
+    {
+        float time = 0f;
+
+        gameObject.layer = _slideLayerIndex;
+
+        while (time < _slideDuration)
+        {
+            time += Time.deltaTime;
+
+
+
+            yield return null;
+        }
+
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
     private void Landed()

@@ -8,6 +8,7 @@ public class PlayerDeathTrigger : MonoBehaviour
     {
         if ((_hitLayer & 1 << other.gameObject.layer) == 1 << other.gameObject.layer)
         {
+            // add death functionality
             Debug.Log("Death");
         }
     }
