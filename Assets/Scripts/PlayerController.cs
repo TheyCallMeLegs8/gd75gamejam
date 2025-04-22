@@ -37,6 +37,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _slideDuration = 1f;
     [SerializeField] private int _slideLayerIndex = 7;
 
+    [Header("Super Mode")]
+    [SerializeField] private float _superDuration = 6f;
+    [SerializeField] private float _superHeight = 10f;
+    [SerializeField] private float _superRiseSpeed = 5f;
+    private Tween _superMovementTween;
+    private bool _isSuper = false;
+
     private void OnValidate()
     {
         if(_rigidBody == null) _rigidBody = GetComponent<Rigidbody>();
@@ -91,7 +98,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnSlide()
     {
+        if (_isSuper) return;
+
         DoSlide();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ActivateSuperMode();
+        }
     }
 
     private void FixedUpdate()
@@ -173,8 +190,6 @@ public class PlayerController : MonoBehaviour
         {
             time += Time.deltaTime;
 
-
-
             yield return null;
         }
 
@@ -188,6 +203,53 @@ public class PlayerController : MonoBehaviour
     private void Landed()
     {
         _hasLanded = true;
+    }
+
+    public void ActivateSuperMode()
+    {
+        StartCoroutine(SuperMode());
+
+        _rigidBody.linearVelocity = Vector3.zero;
+
+        _isSuper = true;
+    }
+
+    private IEnumerator SuperMode()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Power");
+        foreach (Transform childTransform in gameObject.transform)
+        {
+            childTransform.gameObject.layer = LayerMask.NameToLayer("Power");
+        }
+
+        _rigidBody.useGravity = false;
+
+        float currentY = gameObject.transform.localPosition.y;
+        float targetY = _superHeight;
+        float distance = Mathf.Abs(targetY - currentY);
+
+        float duration = distance / _superRiseSpeed;
+
+        _superMovementTween = Tween.LocalPositionY(gameObject.transform, _superHeight, duration);
+
+        float time = 0f;
+
+        while(time < _superDuration)
+        {
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _rigidBody.useGravity = true;
+
+        _isSuper = false;
+
+        gameObject.layer = LayerMask.NameToLayer("Player");
+        foreach (Transform childTransform in gameObject.transform)
+        {
+            childTransform.gameObject.layer = LayerMask.NameToLayer("Player");
+        }
     }
 
     private void Teleport(Vector3 teleportPoint)

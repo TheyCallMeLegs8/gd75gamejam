@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerDeathTrigger : MonoBehaviour
 {
+    [SerializeField] private PlayerController _playerControls;
+
     [SerializeField] private LayerMask _hitLayer;
 
     private void OnTriggerEnter(Collider other)
@@ -10,6 +12,11 @@ public class PlayerDeathTrigger : MonoBehaviour
         {
             // add death functionality
             Debug.Log("Death");
+        }
+
+        if (other.GetComponent<SuperPickup>())
+        {
+            _playerControls?.ActivateSuperMode();
         }
     }
 }
