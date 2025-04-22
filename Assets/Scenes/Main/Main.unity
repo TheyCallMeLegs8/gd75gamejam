@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Additive Scene Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6768904831746478403, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768904831746478403, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
+      propertyPath: _loadAllOnEnable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8600767104008870933, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
