@@ -22,6 +22,7 @@ public class AdditiveSceneManager : MonoBehaviour
 
     public void LoadScenes()
     {
+        if (SceneList.Count <= 0) return;
         for (int i = 0; i < SceneList.Count; i++)
         {
             if (SceneManager.GetSceneByName(SceneList[i].name).isLoaded) continue;
@@ -31,6 +32,7 @@ public class AdditiveSceneManager : MonoBehaviour
 
     public void UnloadScenes()
     {
+        if (SceneList.Count <= 0) return;
         for (int i = 0; i < SceneList.Count; i++)
         {
             if (!SceneManager.GetSceneByName(SceneList[i].name).isLoaded) continue;
