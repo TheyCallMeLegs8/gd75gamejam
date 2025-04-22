@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EndgameHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private UnityEvent _onEndgameTriggered;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private GameObject _endgamePanel;
+
+    public void TriggerEndgame()
     {
-        
+        _endgamePanel.SetActive(true);
+        _onEndgameTriggered.Invoke();
     }
 }
