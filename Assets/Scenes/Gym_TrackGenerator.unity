@@ -382,6 +382,8 @@ MonoBehaviour:
   <TrackLength>k__BackingField: 100
   _encounters:
   - {fileID: 11400000, guid: 00d7e0fe02293f349a8b41be32bac143, type: 2}
+  - {fileID: 11400000, guid: a19c1243f3f7f3545b9b5d42eecedbef, type: 2}
+  - {fileID: 11400000, guid: ab0384f67faf9a6449d18ef7c20f7088, type: 2}
   _trackTransform: {fileID: 1454424556}
   _spawnerPrefab: {fileID: 5794012769761930950, guid: 0960fb3ea10043846a66d519508ef054, type: 3}
 --- !u!1 &1454424555

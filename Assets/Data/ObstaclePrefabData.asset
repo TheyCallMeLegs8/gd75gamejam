@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de0cb42b98b2394b9b9737138408017, type: 3}
   m_Name: ObstaclePrefabData
   m_EditorClassIdentifier: 
-  <Gate>k__BackingField: {fileID: 0}
-  <Barrier>k__BackingField: {fileID: 0}
-  <Wall>k__BackingField: {fileID: 5058736543844196466, guid: 5252ef78dd5f6eb4895508d5fef445ce, type: 3}
+  <Gate>k__BackingField: {fileID: 5834804045231535888, guid: 595ee7682e3d98042835680c737bf574, type: 3}
+  <Barrier>k__BackingField: {fileID: 5543704662119044520, guid: 57699382010d4704eb71f9046d511b6f, type: 3}
+  <Wall>k__BackingField: {fileID: 7162639107965276324, guid: ae3adf15d0c3c434098ddb1d71bc702a, type: 3}
   <Hopping>k__BackingField: {fileID: 0}
-  <Train>k__BackingField: {fileID: 0}
+  <Train>k__BackingField: {fileID: 6730977146196679262, guid: aa27c5dcc147d3e4b87d10d9c11bb9f8, type: 3}

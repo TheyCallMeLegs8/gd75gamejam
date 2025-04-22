@@ -9,6 +9,7 @@ public class BaseObstacle : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TravelSequence());
+        OnObstacleStart();
     }
 
     private IEnumerator TravelSequence()
@@ -23,4 +24,6 @@ public class BaseObstacle : MonoBehaviour
         targetPosition.z = 0;
         return targetPosition;
     }
+
+    protected virtual void OnObstacleStart() { }
 }

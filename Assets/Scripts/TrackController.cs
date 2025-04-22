@@ -20,10 +20,12 @@ public class TrackController : MonoBehaviour
     private List<SpawnHandler> _spawnPoints = new List<SpawnHandler>();
 
     private Coroutine _gameLoopCoroutine;
+    private EncounterData _currentEncounter;
 
     private void Awake()
     {
         SetupTrack();
+        _currentEncounter = _encounters[0];
     }
 
     private void Start()
@@ -40,8 +42,13 @@ public class TrackController : MonoBehaviour
         while (true)
         {
             // Randomly choose next encounter
-            int next = Random.Range(0, _encounters.Count);
-            yield return EncounterSequence(_encounters[next]);
+
+            //int next = Random.Range(0, _encounters.Count);
+
+            EncounterData next = GetNextEncounter(_currentEncounter);
+            
+            Debug.Log("Starting new encounter at next = " + next);
+            yield return EncounterSequence(next);
         }
     }
 
@@ -55,6 +62,7 @@ public class TrackController : MonoBehaviour
             ObstacleType obstacle = data.Obstacles[i];
             _spawnPoints[laneIndex].SpawnObjectOfType(obstacle);
         }
+        yield return new WaitForSeconds(data.RecoveryTime);
     }
 
     private void SetupTrack()
@@ -78,8 +86,44 @@ public class TrackController : MonoBehaviour
             }
             else Debug.LogError("Incorrect prefab assigned");
 
-            // Repositionthe spawner
+            // Reposition the spawner
             spawner.transform.position = new Vector3((-totalWidth / 2) + LaneWidth * i + (LaneWidth / 2f), 0f, TrackLength);
+        }
+    }
+
+    private EncounterData GetNextEncounter(EncounterData previousEncounter)
+    {
+        List<EncounterData> potentialNextEncounters = new List<EncounterData>();
+
+        // Assemble a list of potential branches
+        for (int i = 0; i < previousEncounter.ExitTypes.Count; i++)
+        {   // For every exit type
+            for (int j = 0; j < _encounters.Count; j++)
+            {   // For every encounter
+                for (int k = 0; k < _encounters[j].EntryTypes.Count; k++)
+                {   // For every entry type
+                    if (previousEncounter.ExitTypes[i] == _encounters[j].EntryTypes[k]) potentialNextEncounters.Add(_encounters[j]);
+                }
+            }
+        }
+
+        // Choose from the assembled list
+        if (potentialNextEncounters.Count > 0)
+        {
+            int index = Random.Range(0, potentialNextEncounters.Count);
+            Debug.Log("<color=green>Found viable encounter branch</color>");
+            return potentialNextEncounters[index];
+        }
+        else if (_encounters.Count > 0)
+        {
+            int index = Random.Range(0, _encounters.Count);
+            Debug.Log("<color=yellow>Defaulting to random branch</color>");
+            return _encounters[index];
+        }
+        else
+        {
+            Debug.Log("<color=red>No encounters detected</color>");
+            return null;
         }
     }
 }
