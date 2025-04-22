@@ -2,14 +2,31 @@ using System.Collections;
 using PrimeTween;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BaseObstacle : MonoBehaviour
 {
     [SerializeField] private TweenSettings _settings;
 
+    private Rigidbody _rb;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
+
     private void Start()
     {
+        _rb.isKinematic = true;
         StartCoroutine(TravelSequence());
         OnObstacleStart();
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.TryGetComponent(out PlayerController pc))
+        {
+            pc.Die();
+        }
     }
 
     private IEnumerator TravelSequence()
@@ -21,7 +38,7 @@ public class BaseObstacle : MonoBehaviour
     private Vector3 GetTargetPosition()
     {
         Vector3 targetPosition = transform.position;
-        targetPosition.z = 0;
+        targetPosition.z = -10f;
         return targetPosition;
     }
 
