@@ -49,6 +49,13 @@ public class PlayerController : MonoBehaviour
     private Tween _superMovementTween;
     private bool _isSuper = false;
 
+    [Header("Animations")]
+    [SerializeField] private Vector3 _rightTurnAngle = new Vector3(0, 45f, 0);
+    [SerializeField] private Vector3 _leftTurnAngle = new Vector3(0, -45f, 0);
+    [SerializeField] private float _turnSpeed = 10f;
+    private Tween _rightTurnAnim;
+    private Tween _leftTurnAnim;
+    private Tween _endTurnAnim;
     private EndgameHandler _endgameHandler;
 
     private void OnValidate()
@@ -89,7 +96,15 @@ public class PlayerController : MonoBehaviour
 
         _rightMovementTween.Stop();
         _leftMovementTween.Stop();
+        _endTurnAnim.Stop();
         _leftMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], duration);
+
+        _rightTurnAnim.Stop();
+        _endTurnAnim.Stop();
+        if (!_leftTurnAnim.isAlive)
+        {
+            _leftTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(_leftTurnAngle), _turnSpeed, Ease.Default).OnComplete(() => ReturnToDefaultTween());
+        }
     }
 
     public void OnRight()
@@ -106,7 +121,23 @@ public class PlayerController : MonoBehaviour
 
         _leftMovementTween.Stop();
         _rightMovementTween.Stop();
+        _endTurnAnim.Stop();
         _rightMovementTween = Tween.LocalPositionX(gameObject.transform, _movePoints[_currentIndex], duration);
+
+        _leftTurnAnim.Stop();
+        _endTurnAnim.Stop();
+        if (!_rightTurnAnim.isAlive)
+        {
+            _rightTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(_rightTurnAngle), _turnSpeed, Ease.Default).OnComplete(() => ReturnToDefaultTween());
+        }
+
+    }
+
+    private void ReturnToDefaultTween()
+    {
+        if (_rightTurnAnim.isAlive || _leftTurnAnim.isAlive) return;
+
+        _endTurnAnim = Tween.RotationAtSpeed(gameObject.transform, Quaternion.Euler(0, 0, 0), _turnSpeed, Ease.Default);
     }
 
     public void OnSlide()
