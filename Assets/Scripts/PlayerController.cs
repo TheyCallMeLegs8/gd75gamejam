@@ -167,6 +167,10 @@ public class PlayerController : MonoBehaviour
         float time = 0f;
 
         gameObject.layer = _slideLayerIndex;
+        foreach (Transform childTransform in gameObject.transform)
+        {
+            childTransform.gameObject.layer = _slideLayerIndex;
+        }
 
         while (time < _slideDuration)
         {
@@ -178,6 +182,10 @@ public class PlayerController : MonoBehaviour
         }
 
         gameObject.layer = LayerMask.NameToLayer("Player");
+        foreach (Transform childTransform in gameObject.transform)
+        {
+            childTransform.gameObject.layer = LayerMask.NameToLayer("Player");
+        }
     }
 
     private void Landed()
