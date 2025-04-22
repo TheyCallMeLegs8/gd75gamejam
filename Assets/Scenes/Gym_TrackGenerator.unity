@@ -341,8 +341,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1289341352}
+  - component: {fileID: 1289341353}
   m_Layer: 0
-  m_Name: TrackManager
+  m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,6 +365,25 @@ Transform:
   - {fileID: 1454424556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289341353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289341351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf1291f349b6a9459f8515e22bbf67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <LaneCount>k__BackingField: 3
+  <LaneWidth>k__BackingField: 3
+  <TrackLength>k__BackingField: 100
+  _encounters:
+  - {fileID: 11400000, guid: 00d7e0fe02293f349a8b41be32bac143, type: 2}
+  _trackTransform: {fileID: 1454424556}
+  _spawnerPrefab: {fileID: 5794012769761930950, guid: 0960fb3ea10043846a66d519508ef054, type: 3}
 --- !u!1 &1454424555
 GameObject:
   m_ObjectHideFlags: 0
