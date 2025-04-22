@@ -99,3 +99,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebac3e8bc09b514b881990847b9e891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ObstaclePrefabData>k__BackingField: {fileID: 11400000, guid: 42a15662888ed1e45aec5b9300b85dda, type: 2}

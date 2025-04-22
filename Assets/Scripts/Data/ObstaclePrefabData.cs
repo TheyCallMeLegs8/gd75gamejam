@@ -12,8 +12,9 @@ public class ObstaclePrefabData : ScriptableObject
 
     public Dictionary<ObstacleType, GameObject> Obstacles { get; private set; } = new Dictionary<ObstacleType, GameObject>();
 
-    private void Awake()
+    public void Initialize()
     {
+        Obstacles.Clear();
         Obstacles.Add(ObstacleType.Gate, Gate);
         Obstacles.Add(ObstacleType.Barrier, Barrier);
         Obstacles.Add(ObstacleType.Wall, Wall);

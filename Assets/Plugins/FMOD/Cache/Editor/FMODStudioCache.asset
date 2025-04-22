@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638808420053652588
+  lastModified: 638808481486593889
   FileSizes:
   - Name: Desktop
-    Value: 1432
+    Value: 1426
   Exists: 1
 --- !u!114 &-8518566944962360410
 MonoBehaviour:
@@ -175,13 +175,13 @@ MonoBehaviour:
     Data4: -464219452
   Banks:
   - {fileID: 8250410840181561322}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 136500
 --- !u!114 &-2563501790656856222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,13 +202,13 @@ MonoBehaviour:
     Data4: -1591850298
   Banks:
   - {fileID: 8250410840181561322}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 151500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,20 +233,42 @@ MonoBehaviour:
   - {fileID: -4383205139163996911}
   - {fileID: -8365552874870789476}
   - {fileID: -8518566944962360410}
-  - {fileID: 3145488744539058907}
   - {fileID: 6854742637504629101}
   - {fileID: 2418177334500638053}
   - {fileID: 8593277436590455733}
+  - {fileID: 3602845758247122004}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8250410840181561322}
   StringsBanks:
   - {fileID: -8641393648664326383}
   cacheVersion: 131847
-  cacheTime: 638808420053652588
+  cacheTime: 638808481486593889
   SerializableEventsDict:
-  - key: event:/Menu Music
+  - key: event:/SFX/Player Collision Sound
     index: 0
+  - key: event:/Music/Player Invincibility Powerup
+    index: 1
+  - key: event:/Music/Lose Screen Music
+    index: 2
+  - key: event:/SFX/Monster Growling
+    index: 3
+  - key: event:/SFX/Bike Engine Sound
+    index: 4
+  - key: event:/SFX/Monster Killing Player
+    index: 5
+  - key: event:/SFX/Player Falling Off The Bike
+    index: 6
+  - key: event:/Music/Menu Music
+    index: 7
+  - key: event:/SFX/Jumping
+    index: 8
+  - key: event:/SFX/Sliding
+    index: 9
+  - key: event:/SFX/Player Death Sound
+    index: 10
+  - key: event:/Music/Gameplay Music
+    index: 11
 --- !u!114 &2418177334500638053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +296,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3145488744539058907
+--- !u!114 &3602845758247122004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,23 +306,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Credits Screen Music
+  m_Name: event:/Music/Gameplay Music
   m_EditorClassIdentifier: 
-  Path: event:/Music/Credits Screen Music
+  Path: event:/Music/Gameplay Music
   Guid:
-    Data1: 718357941
-    Data2: 1086832569
-    Data3: 159227831
-    Data4: -1961242
+    Data1: -249713142
+    Data2: 1081450550
+    Data3: -241086818
+    Data4: -2004375476
   Banks:
   - {fileID: 8250410840181561322}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 124000
 --- !u!114 &6854742637504629101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,10 +365,10 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638808420053642610
+  lastModified: 638808481486583998
   FileSizes:
   - Name: Desktop
-    Value: 948992
+    Value: 6567648
   Exists: 1
 --- !u!114 &8593277436590455733
 MonoBehaviour:
