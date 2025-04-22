@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     private Tween _rightTurnAnim;
     private Tween _leftTurnAnim;
     private Tween _endTurnAnim;
+    private EndgameHandler _endgameHandler;
 
     private void OnValidate()
     {
@@ -67,6 +68,12 @@ public class PlayerController : MonoBehaviour
     {
         _currentIndex = _startingIndex;
         Teleport(new Vector3(_movePoints[_startingIndex], 0, 0));
+    }
+
+    private void Start()
+    {
+        _endgameHandler = FindFirstObjectByType<EndgameHandler>();
+        if (_endgameHandler == null) Debug.LogError("Couldn't find endgame handler");
     }
 
     public void OnJump()
@@ -306,5 +313,6 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("<color=red>Player killed</color>");
         _onDeath.Invoke();
+        _endgameHandler.TriggerEndgame();
     }
 }
