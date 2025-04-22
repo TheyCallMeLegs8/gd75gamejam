@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{09d78ac3-b114-4be0-97aa-8b574b6b6d5f}">
+		<property name="assetPath">
+			<value>Invincibility Song.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>141.04533333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8b7140fc-9f5d-4de7-94bd-681f72afb32b}</destination>
+		</relationship>
+	</object>
+</objects>
