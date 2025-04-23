@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: b09047fe5a6a2a6429c10096aba02a96
+guid: 88606f99fd4bbb04db04443b3b8ac5ff
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Coal
-    second: {fileID: 2100000, guid: 22db3071242ce344398d09949cd048a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lit
-    second: {fileID: 2100000, guid: 1cc7d56ad8a85ee42aa442c0cb1ee2bc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_ModuleWall3x3_02_Walls
-    second: {fileID: 2100000, guid: 39fb8002bdc34ed439d6937432d1ad1f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 276aacc38dbd1604f99e9632016be5f4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: body
-    second: {fileID: 2100000, guid: 8476c84f2248cd54bbd4b6151ad826f4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
