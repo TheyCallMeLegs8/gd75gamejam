@@ -18,6 +18,7 @@ public class PlayerDeathTrigger : MonoBehaviour
         if (other.GetComponent<SuperPickup>())
         {
             _playerControls?.ActivateSuperMode();
+            Destroy(other.gameObject);
         }
     }
 }

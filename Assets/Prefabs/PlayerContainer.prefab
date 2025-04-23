@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 5776215477965188684}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2809153, y: -0, z: -0, w: 0.9597326}
-  m_LocalPosition: {x: 0, y: 8.36, z: -5.18}
+  m_LocalPosition: {x: 0, y: 12.9, z: -5.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -472,6 +472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerControls: {fileID: 3881852097567123280}
+  _hitLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8426296510374703105
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerControls: {fileID: 3881852097567123280}
+  _hitLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &4164314721740681907
 PrefabInstance:
   m_ObjectHideFlags: 0
