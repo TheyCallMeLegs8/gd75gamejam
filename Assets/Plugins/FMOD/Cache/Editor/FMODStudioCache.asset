@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638810109684011562
+  lastModified: 638810118548359794
   FileSizes:
   - Name: Desktop
     Value: 1518
@@ -299,7 +299,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8641393648664326383}
   cacheVersion: 131847
-  cacheTime: 638810109684011562
+  cacheTime: 638810118548359794
   SerializableEventsDict:
   - key: event:/SFX/Player Collision Sound
     index: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638810109683998709
+  lastModified: 638810118548339856
   FileSizes:
   - Name: Desktop
     Value: 6773728
