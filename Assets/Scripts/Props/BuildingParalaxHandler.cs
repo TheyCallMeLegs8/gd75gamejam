@@ -29,15 +29,17 @@ public class BuildingParalaxHandler : MonoBehaviour
 
             // Spawn the building
             GameObject spawnedBuilding = Instantiate(spawnable, transform);
-            MoveBuilding(spawnedBuilding);
             Building building = spawnedBuilding.GetComponent<Building>();
+            // Move the building
+            Vector3 offset = new Vector3(_sideMultiplier * building.Dimensions.x / 2f, 0f, building.Dimensions.z);
+            spawnedBuilding.transform.Translate(offset / 2f);
+            MoveBuilding(spawnedBuilding);
 
 
             // Calculate the travel time of the object
             float interval = (building.Dimensions.z + Random.Range(_buildingGapRange.x, _buildingGapRange.y)) / _speed;
+
             
-            // Move the building
-            spawnedBuilding.transform.Translate(_sideMultiplier * building.Dimensions.x / 2f, 0f, building.Dimensions.z / 2f);
 
             // Wait before repeating
             yield return new WaitForSeconds(interval);

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EntryTypes>k__BackingField: 0100000000000000
   <ExitTypes>k__BackingField: 0100000002000000
-  <RecoveryTime>k__BackingField: 1
+  <RecoveryTime>k__BackingField: 0.6
   <Obstacles>k__BackingField: 0000000002000000
   <Lanes>k__BackingField: 0000000002000000
   <TimeOffset>k__BackingField:
