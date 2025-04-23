@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: _speed
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: '_buildingPrefabs.Array.data[0]'
@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9162895562504865836, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -363,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: _speed
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: '_buildingPrefabs.Array.data[0]'
