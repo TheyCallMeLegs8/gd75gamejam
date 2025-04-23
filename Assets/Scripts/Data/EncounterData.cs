@@ -6,6 +6,7 @@ public class EncounterData : ScriptableObject
 {
     [field: SerializeField] public List<EncounterTransitionType> EntryTypes { get; private set; } = new List<EncounterTransitionType>();
     [field: SerializeField] public List<EncounterTransitionType> ExitTypes { get; private set; } = new List<EncounterTransitionType>();
+    [field: SerializeField] public float BuildupTime { get; private set; } = 1f;
     [field: SerializeField] public float RecoveryTime { get; private set; } = 1f;
     [field: SerializeField] public List<ObstacleType> Obstacles { get; private set; } = new List<ObstacleType>();
     [field: SerializeField] public List<int> Lanes { get; private set; } = new List<int>();
