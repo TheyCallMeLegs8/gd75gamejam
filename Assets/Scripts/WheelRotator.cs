@@ -1,5 +1,4 @@
 using UnityEngine;
-using PrimeTween;
 using System.Collections;
 
 public class WheelRotator : MonoBehaviour
@@ -11,11 +10,9 @@ public class WheelRotator : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private float _rotationSpeed = -500;
 
-    private Coroutine _wheelRoutine;
-
     private void Awake()
     {
-        _wheelRoutine = StartCoroutine(RotationRoutine());
+        StartCoroutine(RotationRoutine());
     }
 
     private IEnumerator RotationRoutine()

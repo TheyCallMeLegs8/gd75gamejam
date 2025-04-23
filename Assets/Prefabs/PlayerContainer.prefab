@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakeForce: {x: 0.05, y: 0.05, z: 0.05}
   _duration: 0.1
-  _frequency: 5
+  _frequency: 1
 --- !u!1 &3100446590583149311
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakeForce: {x: 0.05, y: 0.05, z: 0.05}
   _duration: 0.1
-  _frequency: 5
+  _frequency: 1
 --- !u!1 &7529876216386373916
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +251,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4485628455374099800}
-  - {fileID: 8632143917643749347}
   - {fileID: 8663237402991894446}
   - {fileID: 1069274054757309940}
   m_Father: {fileID: 839491064776137917}
@@ -287,7 +286,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7529876216386373916}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 12
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -337,10 +336,11 @@ MonoBehaviour:
   _moveSpeed: 10
   _maxJumpCount: 2
   _jumpForce: 15
+  _doubleJumpForce: 5
   _movePoints:
-  - -5
+  - -3
   - 0
-  - 5
+  - 3
   _startingIndex: 1
   _currentIndex: 0
   _aerialSlideSpeed: 20
@@ -403,78 +403,6 @@ MonoBehaviour:
   _frontWheel: {fileID: 4716871604972393893}
   _backWheel: {fileID: 6470891554087149291}
   _rotationSpeed: -500
---- !u!1 &8231539496496423067
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8632143917643749347}
-  - component: {fileID: 7310535163143571570}
-  - component: {fileID: 6198514625724109402}
-  m_Layer: 6
-  m_Name: DeathTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8632143917643749347
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231539496496423067}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2307023485551623274}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7310535163143571570
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231539496496423067}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Height: 2.75
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6198514625724109402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231539496496423067}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6413cea6ba62e8449971d6e1278466aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerControls: {fileID: 3881852097567123280}
-  _hitLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &8426296510374703105
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +413,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8663237402991894446}
   - component: {fileID: 6913239388324679199}
-  - component: {fileID: 3225351600542114536}
   m_Layer: 6
   m_Name: CollectionTrigger
   m_TagString: Untagged
@@ -531,22 +458,6 @@ CapsuleCollider:
   m_Height: 3.75
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3225351600542114536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8426296510374703105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6413cea6ba62e8449971d6e1278466aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerControls: {fileID: 3881852097567123280}
-  _hitLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1001 &4164314721740681907
 PrefabInstance:
   m_ObjectHideFlags: 0

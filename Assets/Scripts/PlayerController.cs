@@ -60,9 +60,10 @@ public class PlayerController : MonoBehaviour
     private Tween _rightTurnAnim;
     private Tween _leftTurnAnim;
     private Tween _endTurnAnim;
+    private Tween _doubleJumpAnim;
     private EndgameHandler _endgameHandler;
 
-    [Header("Animations")]
+    [Header("Death")]
     [SerializeField] private float _deathExplosionForce = 10f;
     [SerializeField] private Vector3 _explosionOffsetRange = new Vector3(0, -0.5f, 0);
     [SerializeField] private float _explosionRadius = 2f;
@@ -71,14 +72,11 @@ public class PlayerController : MonoBehaviour
     [Header("Cameras")]
     [SerializeField] private CinemachineCamera _followCamera;
 
-    private void OnValidate()
-    {
-        if(_rigidBody == null) _rigidBody = GetComponent<Rigidbody>();
-        if(_playerInput == null) _playerInput = GetComponent<PlayerInput>();
-    }
-
     private void Awake()
     {
+        if (_rigidBody == null) _rigidBody = GetComponent<Rigidbody>();
+        if (_playerInput == null) _playerInput = GetComponent<PlayerInput>();
+
         _currentIndex = _startingIndex;
         Teleport(new Vector3(_movePoints[_startingIndex], 0, 0));
     }
@@ -357,7 +355,6 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        UnityEngine.Debug.Log("<color=red>Player killed</color>");
         OnDeath.Invoke();
 
         bool Die = true;
