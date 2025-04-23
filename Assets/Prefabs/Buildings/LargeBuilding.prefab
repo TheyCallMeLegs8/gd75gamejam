@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3762f362db64fa4c8167ab081b24eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dimensions: {x: 12, y: 0, z: 12}
+  Dimensions: {x: 200, y: 0, z: 12}

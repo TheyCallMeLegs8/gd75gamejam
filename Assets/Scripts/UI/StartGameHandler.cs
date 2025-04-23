@@ -23,6 +23,7 @@ public class StartGameHandler : MonoBehaviour
         {
             Time.timeScale = 1f;
             _onRunStart.Invoke();
+            _isRunning = true;
         }
     }
 }
