@@ -15,5 +15,5 @@ MonoBehaviour:
   <Gate>k__BackingField: {fileID: 5834804045231535888, guid: 595ee7682e3d98042835680c737bf574, type: 3}
   <Barrier>k__BackingField: {fileID: 5543704662119044520, guid: 57699382010d4704eb71f9046d511b6f, type: 3}
   <Wall>k__BackingField: {fileID: 7162639107965276324, guid: ae3adf15d0c3c434098ddb1d71bc702a, type: 3}
-  <Hopping>k__BackingField: {fileID: 0}
+  <Hopping>k__BackingField: {fileID: 5167812016722644808, guid: e6da28dbc626dbd46b6000acf0583248, type: 3}
   <Train>k__BackingField: {fileID: 6730977146196679262, guid: aa27c5dcc147d3e4b87d10d9c11bb9f8, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine;
 public class BaseObstacle : MonoBehaviour
 {
     [SerializeField] private TweenSettings _settings;
+    [SerializeField] private bool _isLethal = true;
 
     private Rigidbody _rb;
 
@@ -23,7 +24,7 @@ public class BaseObstacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.TryGetComponent(out PlayerController pc))
+        if (collider.TryGetComponent(out PlayerController pc) && _isLethal)
         {
             pc.Die();
         }
