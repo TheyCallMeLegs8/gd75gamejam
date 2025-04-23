@@ -54,6 +54,7 @@ public class TrackController : MonoBehaviour
 
     private IEnumerator EncounterSequence(EncounterData data)
     {
+        yield return new WaitForSeconds(data.BuildupTime);
         // Iterate through the list of obstacles in the thing
         for (int i = 0; i < data.Obstacles.Count; i++)
         {
