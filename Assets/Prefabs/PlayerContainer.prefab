@@ -413,6 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663237402991894446}
   - component: {fileID: 6913239388324679199}
+  - component: {fileID: 7411596488807172859}
   m_Layer: 6
   m_Name: CollectionTrigger
   m_TagString: Untagged
@@ -458,6 +459,22 @@ CapsuleCollider:
   m_Height: 3.75
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7411596488807172859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426296510374703105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6413cea6ba62e8449971d6e1278466aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerControls: {fileID: 3881852097567123280}
+  _hitLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &4164314721740681907
 PrefabInstance:
   m_ObjectHideFlags: 0
