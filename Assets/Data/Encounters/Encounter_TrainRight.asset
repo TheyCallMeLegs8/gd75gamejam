@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28b1b0ddfb6321746a9d73433a0fa0f0, type: 3}
-  m_Name: Encounter_DoubleWallOuter
+  m_Name: Encounter_TrainRight
   m_EditorClassIdentifier: 
-  <EntryTypes>k__BackingField: 0100000000000000
-  <ExitTypes>k__BackingField: 0100000002000000
-  <RecoveryTime>k__BackingField: 0.6
-  <Obstacles>k__BackingField: 0000000002000000
-  <Lanes>k__BackingField: 0000000002000000
+  <EntryTypes>k__BackingField: 02000000
+  <ExitTypes>k__BackingField: 00000000
+  <RecoveryTime>k__BackingField: 0.2
+  <Obstacles>k__BackingField: 04000000
+  <Lanes>k__BackingField: 02000000
   <TimeOffset>k__BackingField:
-  - 0.1
-  - 0
+  - 0.2
