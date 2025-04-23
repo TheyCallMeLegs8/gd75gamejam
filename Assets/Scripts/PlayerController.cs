@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private int _jumpCounter = 0;
     private bool _canJump = true;
     [SerializeField] private float _jumpForce = 10f;
+    [SerializeField] private float _doubleJumpForce = 5f;
     private Tween _rightMovementTween;
     private Tween _leftMovementTween;
     [SerializeField] private List<float> _movePoints;
@@ -188,10 +189,17 @@ public class PlayerController : MonoBehaviour
         }
 
         // if the player is grounded and has enough jumps then they may jump
-        if (_isGrounded || _jumpCounter < _maxJumpCount)
+        if (_isGrounded && _jumpCounter < _maxJumpCount)
         {
             _jumpCounter++;
             DoJump();
+            return true;
+        }
+
+        if (!_isGrounded && _jumpCounter < _maxJumpCount)
+        {
+            _jumpCounter++;
+            DoDoubleJump();
             return true;
         }
 
@@ -201,6 +209,18 @@ public class PlayerController : MonoBehaviour
     private void DoJump()
     {
         _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _jumpForce, _rigidBody.linearVelocity.z);
+    }
+
+    private void DoDoubleJump()
+    {
+        if(_rigidBody.linearVelocity.y < 0)
+        {
+            _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _doubleJumpForce, _rigidBody.linearVelocity.z);
+        }
+        else
+        {
+            _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _rigidBody.linearVelocity.y + _doubleJumpForce, _rigidBody.linearVelocity.z);
+        }
     }
 
     protected bool GroundCheck()
