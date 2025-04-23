@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303479052199985936, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
       propertyPath: _encounters.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4303479052199985936, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
       propertyPath: '_encounters.Array.data[0]'
@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: '_encounters.Array.data[11]'
       value: 
       objectReference: {fileID: 11400000, guid: aaec5d1d43e690740b959451da2a4eb1, type: 2}
+    - target: {fileID: 4303479052199985936, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: '_encounters.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: defc9ed8b6414364db9db1251533e9ea, type: 2}
     - target: {fileID: 6679871957389363720, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
       propertyPath: m_Name
       value: Track

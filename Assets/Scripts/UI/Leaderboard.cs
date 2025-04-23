@@ -13,6 +13,13 @@ public class Leaderboard : MonoBehaviour
     public void SetupBoard()
     {
         Debug.LogError(_history.Players.Count);
+
+        if(_history.Players.Count != 0)
+        {
+            string[] names = _history.Players.Keys.ToArray();
+            Debug.LogError(_history.Players[names[0]].score);
+        }
+
         // Order the list
         List<string> players = _history.Players.Keys.ToList();
         players = GetOrderedList(players);
