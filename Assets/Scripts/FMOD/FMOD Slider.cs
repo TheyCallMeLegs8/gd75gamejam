@@ -1,32 +1,27 @@
 using UnityEngine;
-using UnityEngine.UI;
-using FMODUnity;
+using FMOD;
 using FMOD.Studio;
 
-public class FMODSlider : MonoBehaviour
+public class VolumeControl : MonoBehaviour
 {
-    public string parameterName = "Volume";
-    public string eventPath = "event:/Music";
-    public Slider slider;
-
-    private EventInstance eventInstance;
+    public Slider volumeSlider; // UI slider in Unity
+    public FMOD.Studio.Bus musicBus;  // FMOD Bus (could be a VCA or a group)
 
     void Start()
     {
-        eventInstance = RuntimeManager.CreateInstance(eventPath);
-        eventInstance.start();
-        eventInstance.setParameterByName(parameterName, slider.value);
+        // Get the FMOD Studio project's root sound bank
+        var project = FMODManager.GetRootGroup();
 
-        slider.onValueChanged.AddListener(SetParameter);
+        // Find the FMOD Bus (VCA or group)
+        musicBus = project.getBusByName("YourMusicBusName");
+
+        // Initialize the slider's value (optional)
+        volumeSlider.value = musicBus.getVolume();
     }
 
-    void SetParameter(float value)
+    void Update()
     {
-        eventInstance.setParameterByName(parameterName, value);
-    }
-
-    void OnDestroy()
-    {
-        eventInstance.release();
+        // Update the VCA's volume based on the slider's value
+        musicBus.setVolume(volumeSlider.value);
     }
 }
