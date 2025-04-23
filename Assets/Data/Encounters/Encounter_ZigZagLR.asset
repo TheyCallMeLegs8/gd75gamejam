@@ -18,7 +18,7 @@ MonoBehaviour:
   <Obstacles>k__BackingField: 00000000020000000200000002000000
   <Lanes>k__BackingField: 02000000010000000000000001000000
   <TimeOffset>k__BackingField:
-  - 0.1
-  - 0.1
   - 0.2
-  - 0.1
+  - 0.2
+  - 0.4
+  - 0.2
