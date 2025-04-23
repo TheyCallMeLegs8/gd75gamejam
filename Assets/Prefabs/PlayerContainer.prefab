@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 6966076701882954569}
   - component: {fileID: 3881852097567123280}
   - component: {fileID: 8175759975991711485}
+  - component: {fileID: 1887989708222885785}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -195,7 +196,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &3881852097567123280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ MonoBehaviour:
   _onRunStart:
     m_PersistentCalls:
       m_Calls: []
-  _onDeath:
+  OnDeath:
     m_PersistentCalls:
       m_Calls: []
   _rigidBody: {fileID: 6966076701882954569}
@@ -223,16 +224,17 @@ MonoBehaviour:
     m_Bits: 1
   _frontCheckOffset: {x: 0, y: 0, z: 1.7}
   _backCheckOffset: {x: 0, y: 0, z: -1.7}
+  gravityMultiplier: 2
   _moveSpeed: 10
   _maxJumpCount: 1
-  _jumpForce: 10
+  _jumpForce: 15
   _movePoints:
   - -5
   - 0
   - 5
   _startingIndex: 1
   _currentIndex: 0
-  _aerialSlideSpeed: 10
+  _aerialSlideSpeed: 20
   _slideDuration: 1
   _slideLayerIndex: 7
   _superDuration: 6
@@ -242,6 +244,10 @@ MonoBehaviour:
   _leftTurnAngle: {x: 0, y: -15, z: 30}
   _turnSpeed: 300
   _turnEase: 4
+  _deathExplosionForce: 4000
+  _explosionOffsetRange: {x: 5, y: -0.5, z: 5}
+  _explosionRadius: 5
+  _explosionVFX: {fileID: 4355047413390384993, guid: fa1aa3a52224eb7499d11a16ea0fed26, type: 3}
 --- !u!114 &8175759975991711485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +278,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1887989708222885785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529876216386373916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b8605f2906f9a478539598b0d1deea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frontWheel: {fileID: 0}
+  _backWheel: {fileID: 0}
+  _rotationSpeed: 0
 --- !u!1 &8231539496496423067
 GameObject:
   m_ObjectHideFlags: 0
