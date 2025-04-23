@@ -42,5 +42,6 @@ public class BaseObstacle : MonoBehaviour
         return targetPosition;
     }
 
-    protected virtual void OnObstacleStart() { }
+    protected virtual void OnObstacleStart()
+    { FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Train Horn"); }
 }

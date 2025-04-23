@@ -340,7 +340,9 @@ public class PlayerController : MonoBehaviour
         UnityEngine.Debug.Log("<color=red>Player killed</color>");
         OnDeath.Invoke();
 
-        FMODUnity.RuntimeManager.PlayOneShot("Player Death Sound");
+        bool Die = true;
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Death Sound");
 
         _rigidBody.constraints = RigidbodyConstraints.None;
 
