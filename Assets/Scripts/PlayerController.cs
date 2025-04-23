@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _endgameHandler = FindFirstObjectByType<EndgameHandler>();
-        if (_endgameHandler == null) Debug.LogError("Couldn't find endgame handler");
+        //if (_endgameHandler == null) Debug.LogError("Couldn't find endgame handler");
     }
 
     public void OnJump()
@@ -314,6 +314,6 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("<color=red>Player killed</color>");
         _onDeath.Invoke();
-        _endgameHandler.TriggerEndgame();
+        if (_endgameHandler != null) _endgameHandler.TriggerEndgame();
     }
 }
