@@ -1,35 +1,42 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerHistoryData", menuName = "Scriptable Objects/PlayerHistoryData")]
+[CreateAssetMenu(fileName = "PlayerHistoryData", menuName = "Data/PlayerHistoryData")]
 public class PlayerHistoryData : ScriptableObject
 {
-    private List<PlayerData> _data = new List<PlayerData>();
+    private Dictionary<string, PlayerData> _players = new Dictionary<string, PlayerData>();
 
-    public void AddPlayer(string name)
+    private string _currentPlayerName = null;
+
+    public void AddOrLoginPlayer(string name)
     {
-        
+        if (_players.ContainsKey(name))
+        {
+            _currentPlayerName = name;
+        }
+        else
+        {
+            _players.Add(name, new PlayerData(0f));
+        }
     }
 
-    public void UpdatePlayerScore(string name, float score)
+    public void UpdatePlayerScore(float score)
     {
-        for (int i = 0; i < _data.Count; i++)
-        {
-            if (_data[i].name == name)
-            {
-            }
-        }
+        if (_players.ContainsKey(_currentPlayerName) && score > _players[_currentPlayerName].score) _players[_currentPlayerName] = new PlayerData(score);
     }
 
     public void ClearHistory()
     {
-
+        _players.Clear();
+        _currentPlayerName = null;
     }
 }
 
 public struct PlayerData
 {
-    public string name;
+    public PlayerData(float newScore)
+    {
+        score = newScore;
+    }
     public float score;
 }
