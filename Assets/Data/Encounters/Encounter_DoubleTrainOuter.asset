@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b1b0ddfb6321746a9d73433a0fa0f0, type: 3}
   m_Name: Encounter_DoubleTrainOuter
   m_EditorClassIdentifier: 
-  <EntryTypes>k__BackingField: 0200000001000000
-  <ExitTypes>k__BackingField: 02000000
+  <EntryTypes>k__BackingField: 000000000100000002000000
+  <ExitTypes>k__BackingField: 000000000100000002000000
   <RecoveryTime>k__BackingField: 0.5
   <Obstacles>k__BackingField: 0400000004000000
   <Lanes>k__BackingField: 0000000002000000
