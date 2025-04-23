@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4999384674591121837, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4999384674591121837, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: m_LocalPosition.y
@@ -180,6 +180,10 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
+      propertyPath: _buildingGapRange.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: '_buildingPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 8135052650133938266, guid: ddf9dd522168c954e9486ebcb4bab9e9, type: 3}
@@ -204,6 +208,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3807532533274786437, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807532533274786437, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807532533274786437, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262353631057457856, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262353631057457856, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262353631057457856, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.34
+      objectReference: {fileID: 0}
     - target: {fileID: 4303479052199985936, guid: 6252b90f469e39c4e960c7c22ec7d0f8, type: 3}
       propertyPath: _encounters.Array.size
       value: 12
@@ -319,7 +347,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4999384674591121837, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4999384674591121837, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: m_LocalPosition.y
@@ -368,6 +396,10 @@ PrefabInstance:
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: _speed
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
+      propertyPath: _buildingGapRange.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6603359766305839240, guid: 46b3e52cfd82b7b4790a3138cb4ef531, type: 3}
       propertyPath: '_buildingPrefabs.Array.data[0]'

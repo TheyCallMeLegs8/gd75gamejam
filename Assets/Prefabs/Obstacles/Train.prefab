@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settings:
-    duration: 4
+    duration: 2
     ease: 1
     customEase:
       serializedVersion: 2
