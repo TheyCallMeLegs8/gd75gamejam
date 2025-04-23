@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5220646627597880248}
   - component: {fileID: 3939271908388947949}
+  - component: {fileID: 5978067726963130276}
   m_Layer: 6
   m_Name: PlayerFollowCam
   m_TagString: Untagged
@@ -75,6 +76,21 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &5978067726963130276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067348777855623508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74de7186e138b034d9fd5d0f37142b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeForce: {x: 0.05, y: 0.05, z: 0.05}
+  _duration: 0.1
+  _frequency: 5
 --- !u!1 &3100446590583149311
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +261,7 @@ MonoBehaviour:
   _turnSpeed: 300
   _turnEase: 4
   _deathExplosionForce: 4000
-  _explosionOffsetRange: {x: 5, y: -0.5, z: 5}
+  _explosionOffsetRange: {x: 5, y: -1, z: 5}
   _explosionRadius: 5
   _explosionVFX: {fileID: 4355047413390384993, guid: fa1aa3a52224eb7499d11a16ea0fed26, type: 3}
 --- !u!114 &8175759975991711485
