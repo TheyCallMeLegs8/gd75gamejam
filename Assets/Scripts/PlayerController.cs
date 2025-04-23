@@ -180,6 +180,7 @@ public class PlayerController : MonoBehaviour
     private bool TryJump()
     {
         if (!_canJump) return false;
+        if(_isSuper) return false;
 
         if (_isGrounded)
         {
