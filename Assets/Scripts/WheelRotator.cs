@@ -4,6 +4,10 @@ using System.Collections;
 
 public class WheelRotator : MonoBehaviour
 {
+    [Header("Wheels")]
+    [SerializeField] GameObject _frontWheel;
+    [SerializeField] GameObject _backWheel;
+
     [Header("Stats")]
     [SerializeField] private float _rotationSpeed = -500;
 
@@ -20,7 +24,8 @@ public class WheelRotator : MonoBehaviour
         {
             float deltaRotation = _rotationSpeed * Time.deltaTime;
 
-            transform.Rotate(0, 0, deltaRotation);
+            _frontWheel.transform.Rotate(0, 0, deltaRotation);
+            _backWheel.transform.Rotate(0, 0, deltaRotation);
 
             yield return null;
         }
