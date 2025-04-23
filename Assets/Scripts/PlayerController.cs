@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Events;
 using Unity.Cinemachine;
+using FMOD;
 
 public class PlayerController : MonoBehaviour
 {
@@ -349,15 +350,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Debug.DrawRay(transform.position + _frontCheckOffset, _raycastDirection, Color.yellow);
-        Debug.DrawRay(transform.position + _backCheckOffset, _raycastDirection, Color.yellow);
-        Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
+        UnityEngine.Debug.DrawRay(transform.position + _frontCheckOffset, _raycastDirection, Color.yellow);
+        UnityEngine.Debug.DrawRay(transform.position + _backCheckOffset, _raycastDirection, Color.yellow);
+        UnityEngine.Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
     }
 
     public void Die()
     {
-        Debug.Log("<color=red>Player killed</color>");
+        UnityEngine.Debug.Log("<color=red>Player killed</color>");
         OnDeath.Invoke();
+
+        FMODUnity.RuntimeManager.PlayOneShot("Player Death Sound");
 
         _rigidBody.constraints = RigidbodyConstraints.None;
 
@@ -368,7 +371,9 @@ public class PlayerController : MonoBehaviour
 
         _rigidBody.AddExplosionForce(_deathExplosionForce, transform.position + randomOffset, _explosionRadius);
 
-        if(_explosionVFX != null)
+      
+
+        if (_explosionVFX != null)
         {
             GameObject explosion = Instantiate(_explosionVFX, gameObject.transform);
         }
