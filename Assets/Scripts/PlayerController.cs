@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Events")]
     [SerializeField] private UnityEvent _onRunStart;
-    [SerializeField] private UnityEvent _onDeath;
+    [SerializeField] public UnityEvent OnDeath;
 
     [Header("Components")]
     [SerializeField] private Rigidbody _rigidBody;
@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
     private bool _wasGrounded;
 
     [Header("Movement")]
+    [SerializeField] private float gravityMultiplier = 2f;
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private int _maxJumpCount = 1;
     private int _jumpCounter = 0;
-    private bool _hasLanded = true;
     private bool _canJump = true;
     [SerializeField] private float _jumpForce = 10f;
     private Tween _rightMovementTween;
@@ -58,6 +58,12 @@ public class PlayerController : MonoBehaviour
     private Tween _leftTurnAnim;
     private Tween _endTurnAnim;
     private EndgameHandler _endgameHandler;
+
+    [Header("Animations")]
+    [SerializeField] private float _deathExplosionForce = 10f;
+    [SerializeField] private Vector3 _explosionOffsetRange = new Vector3(0, -0.5f, 0);
+    [SerializeField] private float _explosionRadius = 2f;
+    [SerializeField] private GameObject _explosionVFX;
 
     private void OnValidate()
     {
@@ -154,11 +160,17 @@ public class PlayerController : MonoBehaviour
         {
             ActivateSuperMode();
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Die();
+        }
     }
 
     private void FixedUpdate()
     {
         GroundCheck();
+        _rigidBody.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
     }
 
     private bool TryJump()
@@ -198,7 +210,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             _isGrounded = false;
-            _hasLanded = false;
         }
 
         if(!_wasGrounded && _isGrounded)
@@ -247,7 +258,7 @@ public class PlayerController : MonoBehaviour
 
     private void Landed()
     {
-        _hasLanded = true;
+
     }
 
     public void ActivateSuperMode()
@@ -313,7 +324,21 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         Debug.Log("<color=red>Player killed</color>");
-        _onDeath.Invoke();
+        OnDeath.Invoke();
+
+        _rigidBody.constraints = RigidbodyConstraints.None;
+
+        float randomX = Random.Range(-_explosionOffsetRange.x, _explosionOffsetRange.x);
+        float randomZ = Random.Range(-_explosionOffsetRange.z, _explosionOffsetRange.z);
+
+        Vector3 randomOffset = new Vector3(randomX, _explosionOffsetRange.y, randomZ);
+
+        _rigidBody.AddExplosionForce(_deathExplosionForce, transform.position + randomOffset, _explosionRadius);
+
+        if(_explosionVFX != null)
+        {
+            GameObject explosion = Instantiate(_explosionVFX, gameObject.transform);
+        }
 
         if (_endgameHandler != null) _endgameHandler.TriggerEndgame();
     }
