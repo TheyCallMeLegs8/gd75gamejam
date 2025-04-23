@@ -33,7 +33,6 @@ public class BuildingParalaxHandler : MonoBehaviour
             // Move the building
             Vector3 offset = new Vector3(_sideMultiplier * building.Dimensions.x / 2f, 0f, building.Dimensions.z);
             spawnedBuilding.transform.Translate(offset / 2f);
-            Debug.LogError(offset);
             MoveBuilding(spawnedBuilding);
 
 
