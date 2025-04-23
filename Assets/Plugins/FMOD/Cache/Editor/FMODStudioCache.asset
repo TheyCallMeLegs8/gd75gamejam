@@ -271,7 +271,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8641393648664326383}
   cacheVersion: 131847
-  cacheTime: 638810049320453727
+  cacheTime: 638810114772574703
   SerializableEventsDict:
   - key: event:/SFX/Player Collision Sound
     index: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638810049320453727
+  lastModified: 638810114772574703
   FileSizes:
   - Name: Desktop
     Value: 6568288

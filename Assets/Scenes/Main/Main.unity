@@ -175,6 +175,22 @@ PrefabInstance:
       propertyPath: _loadAllOnEnable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6768904831746478403, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
+      propertyPath: 'SceneList.Array.data[0]'
+      value: Main_Characters
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768904831746478403, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
+      propertyPath: 'SceneList.Array.data[1]'
+      value: Main_Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768904831746478403, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
+      propertyPath: 'SceneList.Array.data[2]'
+      value: Main_Lighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768904831746478403, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
+      propertyPath: 'SceneList.Array.data[3]'
+      value: Main_UI
+      objectReference: {fileID: 0}
     - target: {fileID: 8600767104008870933, guid: 2c609af5a5806e54296ab0653c0fbf64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

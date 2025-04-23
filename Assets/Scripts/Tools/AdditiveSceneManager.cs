@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AdditiveSceneManager : MonoBehaviour
 {
-    [field: SerializeField] public List<SceneAsset> SceneList = new List<SceneAsset>();
+    [field: SerializeField] public List<string> SceneList = new List<string>();
 
     [SerializeField] private bool _loadAllOnEnable = true;
     [SerializeField] private bool _unloadAllOnDisable = true;
@@ -25,8 +24,8 @@ public class AdditiveSceneManager : MonoBehaviour
         if (SceneList.Count <= 0) return;
         for (int i = 0; i < SceneList.Count; i++)
         {
-            if (SceneManager.GetSceneByName(SceneList[i].name).isLoaded) continue;
-            SceneManager.LoadScene(SceneList[i].name, LoadSceneMode.Additive);
+            if (SceneManager.GetSceneByName(SceneList[i]).isLoaded) continue;
+            SceneManager.LoadScene(SceneList[i], LoadSceneMode.Additive);
         }
     }
 
@@ -35,8 +34,8 @@ public class AdditiveSceneManager : MonoBehaviour
         if (SceneList.Count <= 0) return;
         for (int i = 0; i < SceneList.Count; i++)
         {
-            if (!SceneManager.GetSceneByName(SceneList[i].name).isLoaded) continue;
-            SceneManager.UnloadSceneAsync(SceneList[i].name);
+            if (!SceneManager.GetSceneByName(SceneList[i]).isLoaded) continue;
+            SceneManager.UnloadSceneAsync(SceneList[i]);
         }
     }
 }
