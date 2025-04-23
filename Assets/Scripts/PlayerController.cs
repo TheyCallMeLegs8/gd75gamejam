@@ -314,6 +314,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("<color=red>Player killed</color>");
         _onDeath.Invoke();
+
         if (_endgameHandler != null) _endgameHandler.TriggerEndgame();
     }
 }
