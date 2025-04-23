@@ -4,6 +4,7 @@ using PrimeTween;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Events;
+using Unity.Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool _wasGrounded;
 
     [Header("Movement")]
-    [SerializeField] private float gravityMultiplier = 2f;
+    [SerializeField] private float _gravityMultiplier = 2f;
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private int _maxJumpCount = 1;
     private int _jumpCounter = 0;
@@ -64,6 +65,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 _explosionOffsetRange = new Vector3(0, -0.5f, 0);
     [SerializeField] private float _explosionRadius = 2f;
     [SerializeField] private GameObject _explosionVFX;
+
+    [Header("Cameras")]
+    [SerializeField] private CinemachineCamera _followCamera;
 
     private void OnValidate()
     {
@@ -170,7 +174,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         GroundCheck();
-        _rigidBody.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
+        _rigidBody.AddForce(Physics.gravity * _gravityMultiplier, ForceMode.Acceleration);
     }
 
     private bool TryJump()
@@ -278,6 +282,12 @@ public class PlayerController : MonoBehaviour
             childTransform.gameObject.layer = LayerMask.NameToLayer("Power");
         }
 
+        int baseCamPriority = _followCamera.Priority;
+
+        _followCamera.Priority = 0;
+
+        float baseGravity = _gravityMultiplier;
+        _gravityMultiplier = 0f;
         _rigidBody.useGravity = false;
 
         float currentY = gameObject.transform.localPosition.y;
@@ -297,6 +307,9 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+        _followCamera.Priority = baseCamPriority;
+
+        _gravityMultiplier = baseGravity;
         _rigidBody.useGravity = true;
 
         _isSuper = false;

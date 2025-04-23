@@ -8,11 +8,12 @@ public class PlayerDeathTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if ((_hitLayer & 1 << other.gameObject.layer) == 1 << other.gameObject.layer)
         {
             // add death functionality
             Debug.Log("Death");
-        }
+        }*/
 
         if (other.GetComponent<SuperPickup>())
         {
