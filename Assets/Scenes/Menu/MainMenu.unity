@@ -2535,6 +2535,7 @@ GameObject:
   - component: {fileID: 930838275}
   - component: {fileID: 930838274}
   - component: {fileID: 930838277}
+  - component: {fileID: 930838278}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2660,6 +2661,37 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &930838278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930838273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1368604501
+      Data2: 1327939591
+      Data3: 590453633
+      Data4: 556874641
+    Path: event:/Music/Menu Music
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &985555969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,7 +3387,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1405116597}
   - component: {fileID: 1405116598}
-  - component: {fileID: 1405116599}
   - component: {fileID: 1405116600}
   m_Layer: 5
   m_Name: VolumeSlider
@@ -3449,37 +3480,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1405116599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405116596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1368604501
-      Data2: 1327939591
-      Data3: 590453633
-      Data4: 556874641
-    Path: event:/Music/Menu Music
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &1405116600
 MonoBehaviour:
   m_ObjectHideFlags: 0

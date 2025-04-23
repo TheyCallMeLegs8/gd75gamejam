@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8948852670209639871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Train Horn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Train Horn
+  Guid:
+    Data1: -1771064817
+    Data2: 1202862196
+    Data3: 1073941151
+    Data4: -900673273
+  Banks:
+  - {fileID: 8250410840181561322}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &-8641393648664326383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638809215927987346
+  lastModified: 638810109684011562
   FileSizes:
   - Name: Desktop
-    Value: 1476
+    Value: 1518
   Exists: 1
 --- !u!114 &-8518566944962360410
 MonoBehaviour:
@@ -265,13 +292,14 @@ MonoBehaviour:
   - {fileID: 8593277436590455733}
   - {fileID: -3839862835656008752}
   - {fileID: 6936975432079436496}
+  - {fileID: -8948852670209639871}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8250410840181561322}
   StringsBanks:
   - {fileID: -8641393648664326383}
   cacheVersion: 131847
-  cacheTime: 638810114772574703
+  cacheTime: 638810109684011562
   SerializableEventsDict:
   - key: event:/SFX/Player Collision Sound
     index: 0
@@ -299,6 +327,8 @@ MonoBehaviour:
     index: 11
   - key: event:/Music/Credits Screen Music
     index: 12
+  - key: event:/SFX/Train Horn
+    index: 13
 --- !u!114 &2418177334500638053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,10 +425,10 @@ MonoBehaviour:
   Path: FMOD/GameJamProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638810114772574703
+  lastModified: 638810109683998709
   FileSizes:
   - Name: Desktop
-    Value: 6568288
+    Value: 6773728
   Exists: 1
 --- !u!114 &8593277436590455733
 MonoBehaviour:
@@ -426,7 +456,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2000
 --- !u!114 &8957931220477905657
 MonoBehaviour:
   m_ObjectHideFlags: 0

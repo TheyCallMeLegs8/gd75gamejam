@@ -335,7 +335,7 @@ MonoBehaviour:
   _backCheckOffset: {x: 0, y: 0, z: -1.7}
   _gravityMultiplier: 2
   _moveSpeed: 10
-  _maxJumpCount: 1
+  _maxJumpCount: 2
   _jumpForce: 15
   _movePoints:
   - -5

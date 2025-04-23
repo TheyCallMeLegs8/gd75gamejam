@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Events;
 using Unity.Cinemachine;
+using FMOD;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private int _jumpCounter = 0;
     private bool _canJump = true;
     [SerializeField] private float _jumpForce = 10f;
+    [SerializeField] private float _doubleJumpForce = 5f;
     private Tween _rightMovementTween;
     private Tween _leftMovementTween;
     [SerializeField] private List<float> _movePoints;
@@ -187,10 +189,17 @@ public class PlayerController : MonoBehaviour
         }
 
         // if the player is grounded and has enough jumps then they may jump
-        if (_isGrounded || _jumpCounter < _maxJumpCount)
+        if (_isGrounded && _jumpCounter < _maxJumpCount)
         {
             _jumpCounter++;
             DoJump();
+            return true;
+        }
+
+        if (!_isGrounded && _jumpCounter < _maxJumpCount)
+        {
+            _jumpCounter++;
+            DoDoubleJump();
             return true;
         }
 
@@ -200,6 +209,18 @@ public class PlayerController : MonoBehaviour
     private void DoJump()
     {
         _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _jumpForce, _rigidBody.linearVelocity.z);
+    }
+
+    private void DoDoubleJump()
+    {
+        if(_rigidBody.linearVelocity.y < 0)
+        {
+            _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _doubleJumpForce, _rigidBody.linearVelocity.z);
+        }
+        else
+        {
+            _rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, _rigidBody.linearVelocity.y + _doubleJumpForce, _rigidBody.linearVelocity.z);
+        }
     }
 
     protected bool GroundCheck()
@@ -329,15 +350,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Debug.DrawRay(transform.position + _frontCheckOffset, _raycastDirection, Color.yellow);
-        Debug.DrawRay(transform.position + _backCheckOffset, _raycastDirection, Color.yellow);
-        Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
+        UnityEngine.Debug.DrawRay(transform.position + _frontCheckOffset, _raycastDirection, Color.yellow);
+        UnityEngine.Debug.DrawRay(transform.position + _backCheckOffset, _raycastDirection, Color.yellow);
+        UnityEngine.Debug.DrawRay(transform.position, _raycastDirection, Color.yellow);
     }
 
     public void Die()
     {
-        Debug.Log("<color=red>Player killed</color>");
+        UnityEngine.Debug.Log("<color=red>Player killed</color>");
         OnDeath.Invoke();
+
+        bool Die = true;
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Death Sound");
 
         _rigidBody.constraints = RigidbodyConstraints.None;
 
@@ -348,7 +373,9 @@ public class PlayerController : MonoBehaviour
 
         _rigidBody.AddExplosionForce(_deathExplosionForce, transform.position + randomOffset, _explosionRadius);
 
-        if(_explosionVFX != null)
+      
+
+        if (_explosionVFX != null)
         {
             GameObject explosion = Instantiate(_explosionVFX, gameObject.transform);
         }
